@@ -4,16 +4,18 @@ const { sortData } = require('./sortData');
 const termData = require('./terms.json');
 
 const PORT = 3001;
-
 const app = express();
 
-const sortHelper = (type) =>
-  termData.sort(sortData('term', 'relevance', `${type}`));
+
+
+const sortHelper = type => termData.sort(sortData('term', 'relevance', `${type}`));
+
+
 
 // TODO: Add a comment describing the functionality of this route
-
 app.get('/api/terms/', (req, res) => {
   // TODO: Add a comment describing the req.query object
+  console.log(req.query)
 
   const hasQuery = Object.keys(req.query).length > 0;
 
@@ -71,6 +73,9 @@ app.get('/api/categories', (req, res) => {
   return res.json(result);
 });
 
+
+
+// listen for connections on PORT
 app.listen(PORT, () =>
   console.info(`Example app listening at http://localhost:${PORT} 🚀`)
 );

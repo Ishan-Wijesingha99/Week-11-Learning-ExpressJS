@@ -41,4 +41,4 @@ const sortData = (firstKey, secondKey, type) => {
       return undefined;
   }
 };
-exports.sortData = sortData;
+exports.sortData = {sortData};
