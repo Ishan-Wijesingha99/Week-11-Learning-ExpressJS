@@ -1,0 +1,33 @@
+
+What is Express.js ?
+A Nodejs framework that must be installed using npm. It helps manage servers and routes in Nodejs. 
+
+
+
+What is bandwidth?
+On the internet, data is transmitted from client to server, server to server, client to client. Bandwidth is the maximum amount of data that can be transmitted over an internet connection in a given period of time.
+The greater the bandwidth, the better!
+
+
+
+What is a RESTFUL API?
+
+- Has a client and a server. HTTP and HTTPS requests are sent between the two.
+
+- Use stateless communications between client and server. Stateless means the server will have no idea about any prior requests. The server will process a request without any prior information from previous requests.
+
+- serves cached objects to clients to reduce bandwidth. In the cache, there will be objects that have already been sent between clients and the server, so, if you want to speed things up, RESTFUL APIs will serve objects already in the cache to clients
+
+
+
+
+Web APIs we get information using fetch()
+this is different to RESTFUL APIs
+
+
+What are some HTTP methods?
+
+POST - submits data from client to server
+GET - retrieves a resource from the server
+DELETE - deletes a specified resource
+PUT - Replaces/updates a specified resource
