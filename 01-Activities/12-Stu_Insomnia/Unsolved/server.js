@@ -13,6 +13,7 @@ app.get('/', (req, res) => {
 
 // Create a GET route for `/api` that will return the content of our json file
 app.get('/api', (req, res) => {
+  // whenever you use res.json or res.end , this actually ENDS the execution of this code block. So, make sure you put it at the end
   res.json(dbJSON)
 });
 

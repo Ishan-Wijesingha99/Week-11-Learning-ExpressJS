@@ -4,17 +4,21 @@ const PORT = 3001;
 
 const app = express();
 
-// GET request
-app.get('/api/reviews', (req, res) => {
-  // Let the client know that their request was received
-  res.json(`${req.method} request received`);
 
+
+app.get('/api/reviews', (req, res) => {
+  
   // Show the user agent information in the terminal
   console.info(req.rawHeaders);
 
   // Log our request to the terminal
   console.info(`${req.method} request received`);
+
+  // req.method is what type of request it is, either GET, or POST, or whatever
+  res.json(`${req.method} request received`);
 });
+
+
 
 // POST request
 app.post('/api/reviews', (req, res) => {
