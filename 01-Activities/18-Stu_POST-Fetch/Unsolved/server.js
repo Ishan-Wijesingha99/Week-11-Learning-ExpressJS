@@ -46,10 +46,10 @@ app.post('/api/reviews', (req, res) => {
   // Log that a POST request was received
   console.info(`${req.method} request received to add a review`);
 
-  // TODO: Add a comment describing the functionality of following line of code:
+  // destructuring the req.body object
   const { product, review, username } = req.body;
 
-  // TODO: Add a comment describing why we would check to see if the following properties exist before entering the code block
+  // use the fact that if these variables exist, they are in fact truthy, and if one of them do not exist, then it will be undefined which is falsy. Using short circuiting, if any one of product, review or username does not exist, this if block will not execute
   if (product && review && username) {
     // Variable for the object we will save
     const newReview = {
@@ -67,10 +67,11 @@ app.post('/api/reviews', (req, res) => {
 
     console.log(response);
 
-    // TODO: Add a comment explaining the functionality of res.json()
+    // this will display the json on the webpage, the response json
     res.status(201).json(response);
   } else {
-    // TODO: Add a comment describing the purpose of the else statement in this POST request.
+    // this will execute if one of those three variables did not exist
+    // this is an error message that will be displayed in the browser
     res.status(500).json('Error in posting review');
   }
 });
