@@ -1,13 +1,17 @@
 const express = require('express');
-
 const PORT = 3001;
 const reviews = require('./db/reviews');
-
 const app = express();
 
-// TODO: Implement middleware for the parsing of JSON data
 
-// TODO: Implement middleware for parsing of URL encoded data
+
+// Implement middleware for the parsing of JSON data
+app.use(express.json())
+
+// Implement middleware for parsing of URL encoded data
+app.use(express.urlencoded({ extended: true }))
+
+
 
 // GET request for ALL reviews
 app.get('/api/reviews', (req, res) => {
